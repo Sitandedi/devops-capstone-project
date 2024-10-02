@@ -9,6 +9,12 @@ from flask import Flask
 from service import config
 from service.common import log_handlers
 
+# Import the Talisman class from flask_talisman
+from flask_talisman import Talisman
+
+# Import the CORS class from flask_cors
+from flask_cors import CORS
+
 # Create Flask application
 app = Flask(__name__)
 app.config.from_object(config)
@@ -19,12 +25,6 @@ from service import routes, models  # noqa: F401 E402
 
 # pylint: disable=wrong-import-position
 from service.common import error_handlers, cli_commands  # noqa: F401 E402
-
-# Import the Talisman class from flask_talisman
-from flask_talisman import Talisman
-
-# Import the CORS class from flask_cors
-from flask_cors import CORS
 
 # Set up logging for production
 log_handlers.init_logging(app, "gunicorn.error")
