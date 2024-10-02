@@ -46,4 +46,4 @@ app.logger.info("Service initialized!")
 talisman = Talisman(app)
 
 # An instance of the CORS class
-cors = CORS(app)
+CORS(app)
