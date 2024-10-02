@@ -23,6 +23,9 @@ from service.common import error_handlers, cli_commands  # noqa: F401 E402
 # Import the Talisman class from flask_talisman
 from flask_talisman import Talisman
 
+# Import the CORS class from flask_cors
+from flask_cors import CORS
+
 # Set up logging for production
 log_handlers.init_logging(app, "gunicorn.error")
 
@@ -41,3 +44,6 @@ app.logger.info("Service initialized!")
 
 # An instance of the Talisman class
 talisman = Talisman(app)
+
+# An instance of the CORS class
+cors = CORS(app)
